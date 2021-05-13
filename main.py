@@ -1,6 +1,3 @@
-inventory = {'rope': 1, 'torch': 6, 'gold coin': 42, 'dagger': 1, 'arrow': 12}
-
-
 def displayinventory(vocabulary):
     print('Inventory: ')
     total = 0
@@ -9,5 +6,10 @@ def displayinventory(vocabulary):
         total += int(v)
     print('Total number of intems: '+str(total))
 
+def addToInventory(inventory, addedItems):
 
+
+inventory = {'rope': 1, 'torch': 6, 'gold coin': 42, 'dagger': 1, 'arrow': 12}
+dragonLoot = ['gold coin', 'dagger', 'gold coin', 'gold coin', 'ruby']
+inventory = addToInventory(inventory, dragonLoot)
 displayinventory(inventory)
