@@ -1,23 +1,13 @@
-grid = [['.', '.', '.', '.', '.', '.', ],
-        ['.', 'O', 'O', '.', '.', '.', ],
-        ['O', 'O', 'O', 'O', '.', '.', ],
-        ['O', 'O', 'O', 'O', 'O', '.', ],
-        ['.', 'O', 'O', 'O', 'O', 'O', ],
-        ['O', 'O', 'O', 'O', 'O', '.', ],
-        ['O', 'O', 'O', 'O', '.', '.', ],
-        ['.', 'O', 'O', '.', '.', '.', ],
-        ['.', '.', '.', '.', '.', '.', ]]
+inventory = {'rope': 1, 'torch': 6, 'gold coin': 42, 'dagger': 1, 'arrow': 12}
 
-'''
-for x in grid:
-    while grid.index(x) <= int(len(grid) -1):
-        xnum = 0
-            while y <= int(len(x) - 1):
-                print(x[y], end='')
-                y += 1
-        xnum += 1
-'''
-for y in range(len(grid[0])-1, -1, -1):
-    for x in range(len(grid)):
-        print(grid[x][y], end=' ')
-    print()
+
+def displayinventory(vocabulary):
+    print('Inventory: ')
+    total = 0
+    for k, v in vocabulary.items():
+        print(str(v)+"  "+str(k))
+        total += int(v)
+    print('Total number of intems: '+str(total))
+
+
+displayinventory(inventory)
