@@ -1,28 +1,10 @@
-def displayinventory(vocabulary):
-    print('Inventory: ')
-    total = 0
-    for k, v in vocabulary.items():
-        print(str(v)+"  "+str(k))
-        total += int(v)
-    print('Total number of intems: '+str(total))
+def printPicnic(itemsDict, leftWidth, rightWidth):
+    print('PICNIC ITEMS'.center(leftWidth + rightWidth, '-'))
+    for k, v in itemsDict.items():
+        print(k.ljust(leftWidth, '.') + str(v).rjust(rightWidth))
 
 
-def addToInventory(inventory, addedItems):
-    for item in addedItems:
-        if item not in inventory.keys():
-            inventory.update({item: 1})
-        else:
-            inventory.update({item: inventory[item] + 1})
-
-dragonLoot = ['gold coin', 'dagger', 'gold coin', 'gold coin', 'ruby']
-inv = {'gold coin': 42, 'rope': 1}
-'''
-for item in dragonLoot:
-    if item not in inv.keys():
-        inv.update({item:1})
-    else:
-        inv.update({item:inv[item]+1})
-'''
-
-addToInventory(inv, dragonLoot)
-displayinventory(inv)
+picnicItems = {'sandwiches':4, 'apples':12, 'cups':4,
+               'cookies': 8000}
+printPicnic(picnicItems, 12, 5)
+printPicnic(picnicItems, 20, 6)
